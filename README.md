@@ -156,7 +156,6 @@ func main() {
     ├── alert.rules <- add
     └── prometheus.yml
 ```
-
 alert.rules
 
 ```yaml
@@ -423,3 +422,7 @@ curl --location --request POST '192.168.10.101:8001/notify' \
 ![1674031308712.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1674031308712.jpg)
 
 ![1674031476240.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1674031476240.jpg)
+
+#docker-compose relationship
+
+![docker-compose.png](https://github.com/tomoffice/prometheus/blob/origin/images/docker-compose.png)
