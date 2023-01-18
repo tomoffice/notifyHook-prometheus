@@ -375,7 +375,7 @@ notifyHook:
 
 ```docker
 curl --location --request POST '192.168.10.101:8001/notify' \
---header 'Authorization: Bearer msMRG9L842SX2HOLTWO9KcykxlgmKZmXpgx8nkSPUhU' \
+--header 'Authorization: Bearer' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "receiver": "api-receiver",
