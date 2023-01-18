@@ -1,0 +1,18 @@
+groups:
+  - name: example
+    rules:
+      - alert: goApp-down
+        expr: up == 0
+        for: 1s
+        labels:
+          severity: critical
+        annotations:
+          title: Node {{ $labels.instance }} is down
+          description: Failed to scrape {{ $labels.job }} on {{ $labels.instance }} for more than 3 minutes. Node seems down.
+      - alert: goApp-flip
+        expr: goApp_flip > 5
+        labels:
+          severity: warm
+        annotations:
+          title: flip {{ $labels.instance }} is more than 5 value is {{ $value }}
+          description: system make {{ $labels.instance }} some error for test {{ $labels.job }}

@@ -1,0 +1,30 @@
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+alerting:
+  alertmanagers:
+    - scheme: http
+      static_configs:
+        - targets:
+            - alertmanager:9093
+rule_files:
+  - 'alert.rules'
+  # - "first.rules"
+  # - "second.rules"
+scrape_configs:
+- job_name: goApp
+  scrape_interval: 2s
+  static_configs:
+  - targets:
+    - golang_flip:9001   
+- job_name: docker desktop
+  scrape_interval: 1m
+  static_configs:
+  - targets:
+    - 192.168.10.101:9323
+
+
+
+
+

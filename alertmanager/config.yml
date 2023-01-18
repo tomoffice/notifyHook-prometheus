@@ -1,0 +1,46 @@
+global:
+  resolve_timeout: 5s # 未收到標記告警通知，等待 timeout 時間之後事件標記為 resolve。
+route:
+  receiver: default-receiver
+  group_wait: 10s # 告警群組訊息建立後的等待時間
+  group_interval: 10s # 上下两组发送告警的间隔时间
+  repeat_interval: 20s # 重新發送相同告警訊息的間隔時間
+  group_by: [cluster, alertname]
+  routes:
+    - receiver: "Line-Notfiy"
+      group_wait: 1s
+      match:
+        alertname: goApp-flip
+      #continue: true
+    - receiver: "Line-Logger"
+      group_wait: 1s
+      match:
+        alertname: goApp-logger
+      #continue: true
+
+# 設定通知管道
+receivers:
+  - name: Line-Notfiy
+    webhook_configs:
+      - url: "http://notifyhook:8001/notify"
+        http_config:
+          authorization:
+            type: Bearer
+            credentials: "XXXX"
+        #send_resolved: true
+  - name: Line-Logger
+    webhook_configs:
+      - url: "http://notifyhook:8001/logger"
+        http_config:
+          authorization:
+            type: Bearer
+            credentials: "XXXX"
+        #send_resolved: true
+  - name: default-receiver
+    webhook_configs:
+      - url: "http://notifyhook:8001/XXX"
+        http_config:
+          authorization:
+            type: Bearer
+            credentials: "XXXX"
+        #send_resolved: true
