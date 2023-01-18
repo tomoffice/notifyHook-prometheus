@@ -121,9 +121,9 @@ func main() {
 }
 ```
 
-![1673104871078.jpg](Docker%2037983de704874fa6b1dcc661a56e0858/1673104871078.jpg)
+![1673104871078.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1673104871078.jpg)
 
-![1673104946958.jpg](Docker%2037983de704874fa6b1dcc661a56e0858/1673104946958.jpg)
+![1673104946958.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1673104946958.jpg)
 
 ## AlertManager
 
@@ -231,7 +231,7 @@ receivers:
         #send_resolved: true
 ```
 
-![1674028560278.jpg](Docker%2037983de704874fa6b1dcc661a56e0858/1674028560278.jpg)
+![1674028560278.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1674028560278.jpg)
 
 用curl測試Alertmanager
 
@@ -256,11 +256,11 @@ curl --location --request POST 'http://192.168.10.101:9093/api/v2/alerts' \
 
 在alertmanager:9093看到的alert
 
-![1674032752022.jpg](Docker%2037983de704874fa6b1dcc661a56e0858/1674032752022.jpg)
+![1674032752022.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1674032752022.jpg)
 
 notify上面看到的alert
 
-![1674032768583.jpg](Docker%2037983de704874fa6b1dcc661a56e0858/1674032768583.jpg)
+![1674032768583.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1674032768583.jpg)
 
 ## NotifyHook API
 
@@ -419,6 +419,7 @@ curl --location --request POST '192.168.10.101:8001/notify' \
 }'
 ```
 
-![1674031308712.jpg](Docker%2037983de704874fa6b1dcc661a56e0858/1674031308712.jpg)
 
-![1674031476240.jpg](Docker%2037983de704874fa6b1dcc661a56e0858/1674031476240.jpg)
+![1674031308712.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1674031308712.jpg)
+
+![1674031476240.jpg](https://github.com/tomoffice/prometheus/blob/origin/images/1674031476240.jpg)
